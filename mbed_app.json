@@ -1,0 +1,13 @@
+{
+    "target_overrides": {
+        "K64F": {
+            "target.bootloader_img": "bootloader/K64F.bin"
+        },
+        "NUCLEO_F429ZI": {
+            "target.bootloader_img": "bootloader/NUCLEO_F429ZI.bin"
+        },
+        "UBLOX_EVK_ODIN_W2": {
+            "target.bootloader_img": "bootloader/UBLOX_EVK_ODIN_W2.bin"
+        }
+    }
+}
