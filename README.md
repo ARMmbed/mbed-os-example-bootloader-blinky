@@ -26,13 +26,13 @@ To either use a different board or a different SD card slot, you must rebuild th
 To do this:
 
 1. Create a bootloader for your board in the project [mbed-os-example-bootloader](https://github.com/ARMmbed/mbed-os-example-bootloader). The bootloader image is named ``mbed-os-example-bootloader.bin``.
-2. Update your board to use the newly created bootloader image. To do this, set the target value `bootloader_img` to the file path of the bootloader image.
+2. Update your board to use the newly created bootloader image. To do this, set the target (replace ``<TARGET_NAME>`` with your target name) value `bootloader_img` to the file path of the bootloader image.
 
 ```
     "target_overrides": {
         ...
-        "NUCLEO_F429ZI": {
-            "target.bootloader_img": "bootloader/NUCLEO_F429ZI.bin"
+        "<TARGET_NAME>": {
+            "target.bootloader_img": "bootloader/<TARGET_NAME>.bin"
         },
         ...
 ```
@@ -42,15 +42,15 @@ To do this:
 Invoke `mbed compile`, and specify the name of your platform and your favorite toolchain (`GCC_ARM`, `ARM`, `IAR`). For example, for the ARM Compiler 5:
 
 ```
-mbed compile -m NUCLEO_F429ZI -t ARM
+mbed compile -m <TARGET_NAME> -t ARM
 ```
 
 Your PC may take a few minutes to compile your code. At the end, you see the following result:
 
 ```
 Merging Regions:
-  Filling region bootloader with bootloader/NUCLEO_F429ZI.bin
-  Filling region application with .\BUILD\NUCLEO_F429ZI\GCC_ARM\mbed-os-example-bootloader-blinky_application.bin
+  Filling region bootloader with bootloader/<TARGET_NAME>.bin
+  Filling region application with .\BUILD\<TARGET_NAME>\GCC_ARM\mbed-os-example-bootloader-blinky_application.bin
 Space used after regions merged: 0x296f4
 +-----------------------+-------+-------+-------+
 | Module                | .text | .data |  .bss |
