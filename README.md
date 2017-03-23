@@ -2,6 +2,8 @@
 
 This example shows how to build and use an application with a prebuilt bootloader. For steps on how to create the bootloader, see [mbed-os-example-bootloader](https://github.com/ARMmbed/mbed-os-example-bootloader).
 
+To read more about the bootloader, please visit [bootloader tutorial](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/advanced/bootloader/).
+
 ## Required hardware
 * A supported board - [u-blox EVK-ODIN-W2](https://developer.mbed.org/platforms/ublox-EVK-ODIN-W2/), [Nucleo F429ZI](https://developer.mbed.org/platforms/ST-Nucleo-F429ZI/) or [K64F](https://developer.mbed.org/platforms/FRDM-K64F/).
 * CI test shield.
@@ -23,8 +25,8 @@ All supported boards mentioned above are set up to use bootloader with a CI test
 To either use a different board or a different SD card slot, you must rebuild the bootloader and update the application.
 To do this:
 
-1. Create a bootloader for your board in the project [mbed-os-example-bootloader](https://github.com/ARMmbed/mbed-os-example-bootloader).
-2. Update your board to use the newly created booloader image. To do this, set the target value `bootloader_img` to the file path of the bootloader image.
+1. Create a bootloader for your board in the project [mbed-os-example-bootloader](https://github.com/ARMmbed/mbed-os-example-bootloader). The bootloader image is named ``mbed-os-example-bootloader.bin``.
+2. Update your board to use the newly created bootloader image. To do this, set the target value `bootloader_img` to the file path of the bootloader image.
 
 ```
     "target_overrides": {
@@ -76,7 +78,7 @@ Image: .\BUILD\NUCLEO_F429ZI\GCC_ARM\mbed-os-example-bootloader-blinky.bin
 ## Program bootloader and application
 
 1. Connect your mbed device to the computer over USB.
-1. Copy the binary file to the mbed device.
+1. Copy the mbed-os-example-bootloader-blinky binary file to the mbed device.
 1. Press the reset button to start the program.
 
 The LED on your platform turns on and off.
