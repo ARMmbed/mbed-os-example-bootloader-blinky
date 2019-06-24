@@ -1,5 +1,9 @@
 {
     "target_overrides": {
+        "*": {
+            "target.features_add"      : ["BOOTLOADER", "STORAGE"],
+            "platform.stdio-baud-rate" : 115200
+        },
         "K64F": {
             "target.bootloader_img": "bootloader/K64F.bin"
         },
@@ -8,6 +12,16 @@
         },
         "UBLOX_EVK_ODIN_W2": {
             "target.bootloader_img": "bootloader/UBLOX_EVK_ODIN_W2.bin"
+        },
+        "NUCLEO_F303RE": {
+            "target.bootloader_img": "bootloader/NUCLEO_F303RE.bin",
+            "target.header_offset" : "0xD000",
+            "target.app_offset"    : "0xD400"
+        },
+        "DISCO_L475VG_IOT01A": {
+            "target.bootloader_img": "bootloader/DISCO_L475VG_IOT01A.bin",
+            "target.header_offset" : "0xD800",
+            "target.app_offset"    : "0xDC00"
         }
     }
 }
