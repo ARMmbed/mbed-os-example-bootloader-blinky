@@ -2,7 +2,9 @@
     "target_overrides": {
         "*": {
             "target.features_add"      : ["BOOTLOADER", "STORAGE"],
-            "platform.stdio-baud-rate" : 115200
+            "platform.stdio-baud-rate" : 115200,
+            "target.header_offset" : "0x10000",
+            "target.app_offset"    : "0x10400"
         },
         "K64F": {
             "target.bootloader_img": "bootloader/K64F.bin"
@@ -15,13 +17,19 @@
         },
         "NUCLEO_F303RE": {
             "target.bootloader_img": "bootloader/NUCLEO_F303RE.bin",
-            "target.header_offset" : "0xD000",
-            "target.app_offset"    : "0xD400"
+            "target.header_offset" : "0x11000",
+            "target.app_offset"    : "0x11400"
         },
         "DISCO_L475VG_IOT01A": {
             "target.bootloader_img": "bootloader/DISCO_L475VG_IOT01A.bin",
-            "target.header_offset" : "0xD800",
-            "target.app_offset"    : "0xDC00"
+            "target.header_offset" : "0x11000",
+            "target.app_offset"    : "0x11400"
+        },
+        "NRF52840_DK": {
+            "target.bootloader_img": "bootloader/NRF52840_DK.hex",
+            "target.header_offset" : "0x3B000",
+            "target.app_offset"    : "0x3B400",
+            "target.OUTPUT_EXT"    : "hex"
         }
     }
 }
