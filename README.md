@@ -1,3 +1,7 @@
+## Deprecation note!
+
+**Please note: This repository is deprecated and it is no longer actively maintained**.
+
 # Getting started with Bootloader Blinky on mbed OS
 
 This example shows how to build and use an application with a prebuilt bootloader. For steps on how to create the bootloader, see [mbed-os-example-bootloader](https://github.com/ARMmbed/mbed-os-example-bootloader).
